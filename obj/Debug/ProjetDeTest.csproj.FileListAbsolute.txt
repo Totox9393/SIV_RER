@@ -1,0 +1,23 @@
+C:\Users\Totox\OneDrive\Documents\Visual Studio 2022\Projets\ProjetDeTest\obj\Debug\ProjetDeTest.csproj.AssemblyReference.cache
+C:\Users\Totox\OneDrive\Documents\Visual Studio 2022\Projets\ProjetDeTest\obj\Debug\ProjetDeTest.csproj.SuggestedBindingRedirects.cache
+C:\Users\Totox\OneDrive\Documents\Visual Studio 2022\Projets\ProjetDeTest\obj\Debug\ProjetDeTest.csproj.GenerateResource.cache
+C:\Users\Totox\OneDrive\Documents\Visual Studio 2022\Projets\ProjetDeTest\obj\Debug\ProjetDeTest.csproj.CoreCompileInputs.cache
+C:\Users\Totox\OneDrive\Documents\Visual Studio 2022\Projets\ProjetDeTest\bin\Debug\Bunifu.UI.WinForms.BunifuTextbox.dll
+C:\Users\Totox\OneDrive\Documents\Visual Studio 2022\Projets\ProjetDeTest\bin\Debug\Guna.UI2.dll
+C:\Users\Totox\OneDrive\Documents\Visual Studio 2022\Projets\ProjetDeTest\bin\Debug\Bunifu.UI.WinForms.BunifuTextbox.xml
+C:\Users\Totox\OneDrive\Documents\Visual Studio 2022\Projets\ProjetDeTest\obj\Debug\ProjetDeTest.Form1.resources
+C:\Users\Totox\OneDrive\Documents\Visual Studio 2022\Projets\ProjetDeTest\obj\Debug\ProjetDeTest.csproj.CopyComplete
+C:\Users\Totox\OneDrive\Documents\Visual Studio 2022\Projets\ProjetDeTest\bin\Debug\Bunifu_UI_v1.5.3.dll
+C:\Users\Totox\OneDrive\Documents\Visual Studio 2022\Projets\ProjetDeTest\bin\Debug\Bunifu_UI_v1.5.3.xml
+C:\Users\Totox\OneDrive\Documents\Visual Studio 2022\Projets\ProjetDeTest\bin\Debug\RER B - St-Denis.exe.config
+C:\Users\Totox\OneDrive\Documents\Visual Studio 2022\Projets\ProjetDeTest\bin\Debug\RER B - St-Denis.exe.manifest
+C:\Users\Totox\OneDrive\Documents\Visual Studio 2022\Projets\ProjetDeTest\bin\Debug\RER B - St-Denis.application
+C:\Users\Totox\OneDrive\Documents\Visual Studio 2022\Projets\ProjetDeTest\bin\Debug\RER B - St-Denis.exe
+C:\Users\Totox\OneDrive\Documents\Visual Studio 2022\Projets\ProjetDeTest\bin\Debug\RER B - St-Denis.pdb
+C:\Users\Totox\OneDrive\Documents\Visual Studio 2022\Projets\ProjetDeTest\obj\Debug\RER B - St-Denis.exe.config
+C:\Users\Totox\OneDrive\Documents\Visual Studio 2022\Projets\ProjetDeTest\obj\Debug\RERB_St_Denis.Properties.Resources.resources
+C:\Users\Totox\OneDrive\Documents\Visual Studio 2022\Projets\ProjetDeTest\obj\Debug\RER B - St-Denis.TrustInfo.xml
+C:\Users\Totox\OneDrive\Documents\Visual Studio 2022\Projets\ProjetDeTest\obj\Debug\RER B - St-Denis.exe.manifest
+C:\Users\Totox\OneDrive\Documents\Visual Studio 2022\Projets\ProjetDeTest\obj\Debug\RER B - St-Denis.application
+C:\Users\Totox\OneDrive\Documents\Visual Studio 2022\Projets\ProjetDeTest\obj\Debug\RER B - St-Denis.exe
+C:\Users\Totox\OneDrive\Documents\Visual Studio 2022\Projets\ProjetDeTest\obj\Debug\RER B - St-Denis.pdb
