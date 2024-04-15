@@ -16,11 +16,11 @@ namespace ProjetDeTest
         private List<string> infoMessages = new List<string>();
         private int currentInfoIndex = 0;
         private System.Timers.Timer infoTimer;
-        private System.Timers.Timer secondTimer; // Ajoutez un nouveau timer pour les secondes
-        private bool soundPlayed = false; // Ajouter un champ pour suivre si le son a été joué
+        private System.Timers.Timer secondTimer; // Timer pour les secondes
+        private bool soundPlayed = false; // Bool pour suivre si le son a été joué ou non
         private Dictionary<string, string> directionSounds;
-        private bool isFirstTrainSoundPlayed = false;
-        private Train lastFirstTrain = null; // Gardez la trace du dernier train qui était en première position
+       // private bool isFirstTrainSoundPlayed = false;
+        private Train lastFirstTrain = null; // Trace du dernier train qui était en première position
 
 
 
@@ -47,7 +47,7 @@ namespace ProjetDeTest
             string lastDirection = trains.LastOrDefault()?.Direction;
             string secondLastDirection = trains.Count > 1 ? trains[trains.Count - 2].Direction : "";
 
-            // Filtrer les directions possibles pour éviter trois fois la même direction consécutivement
+            // Filtre les directions possibles pour éviter trois fois la même direction consécutivement
             var validDirections = possibleDirections.Where(d => d != lastDirection || d != secondLastDirection).ToList();
 
             return validDirections[random.Next(validDirections.Count)];
@@ -61,7 +61,6 @@ namespace ProjetDeTest
                 { "Robinson", @"C:\Users\Totox\OneDrive\Documents\Visual Studio 2022\Projets\ProjetDeTest\Robinson.wav" },
                 { "Saint-Denis", @"C:\Users\Totox\OneDrive\Documents\Visual Studio 2022\Projets\ProjetDeTest\Saint-Denis.wav" },
                 { "Les Baconnets", @"C:\Users\Totox\OneDrive\Documents\Visual Studio 2022\Projets\ProjetDeTest\Baconnets.wav" },
-
                 { "Antony", @"C:\Users\Totox\OneDrive\Documents\Visual Studio 2022\Projets\ProjetDeTest\Antony.wav" }
             };
         }
@@ -89,7 +88,7 @@ namespace ProjetDeTest
 
         private void OnInfoTimedEvent(Object source, ElapsedEventArgs e)
         {
-            // Utilisez Invoke pour mettre à jour en toute sécurité le message d'information sur le thread de l'interface utilisateur
+            // Utilise Invoke pour mettre à jour les messages d'informations sur le thread 
             Invoke(new Action(() =>
             {
                 lblInfoVoyageur.Text = infoMessages[currentInfoIndex];
@@ -99,7 +98,7 @@ namespace ProjetDeTest
 
         private void InitializeTrains()
         {
-            // Assurez-vous que le premier train est programmé pour partir entre 1 et 3 minutes
+            // Le premier train est programmé pour partir entre 1 et 3 minutes au lancement du logiciel
             int firstTrainTime = random.Next(2, 4); // Temps en minutes
 
             trains.Add(new Train
@@ -110,14 +109,15 @@ namespace ProjetDeTest
                 Comment = String.Empty
             });
 
-            // Générer les temps pour les 4 autres trains, assurant qu'ils partent après le premier et dans les 60 minutes
+            // Génére les temps pour les 4 autres trains, assurant qu'ils partent après le premier et dans les 60 minutes
             int lastTime = firstTrainTime;
             for (int i = 1; i < 5; i++)
             {
+            // TODO: Gérer l'affluence du trafic en modifiant les espacements des horaires de passages
                 int nextTime = lastTime + random.Next(5, 16); // Les trains suivants sont espacés de 5 à 15 minutes
                 if (nextTime > 60)
                 {
-                    nextTime = 60; // Limite le temps à 60 minutes !!!!!
+                    nextTime = 60; // Limite le temps à 60 minutes 
                 }
                 trains.Add(new Train
                 {
@@ -129,7 +129,7 @@ namespace ProjetDeTest
                 lastTime = nextTime; // Mettre à jour le dernier temps programmé
             }
 
-            trains = trains.OrderBy(t => t.Time).ToList(); // Assurez-vous que les trains sont triés par temps
+            trains = trains.OrderBy(t => t.Time).ToList(); // Triage des trains en fonction de leurs temps
             UpdateAllTrainDisplays();
         }
 
@@ -156,7 +156,6 @@ namespace ProjetDeTest
             timer.AutoReset = true;
             timer.Enabled = true;
 
-            // Initialiser le secondTimer pour secondes
             secondTimer = new System.Timers.Timer(1000);  // 1000 ms = 1 seconde
             secondTimer.Elapsed += OnSecondTimedEvent;
             secondTimer.AutoReset = true;  // Doit être AutoReset pour continuer à décrémenter
@@ -203,7 +202,7 @@ namespace ProjetDeTest
                         AddNewTrain();
                         UpdateAllTrainDisplays();
 
-                        // Nettoyer explicitement le label après la suppression du train
+                        // Vider le label après la suppression du train
                         Label lblInfo = this.Controls.Find("lblInfoDestination1", true).FirstOrDefault() as Label;
                         if (lblInfo != null) lblInfo.Text = "";
                     }
@@ -259,7 +258,7 @@ namespace ProjetDeTest
                         SoundPlayer directionSoundPlayer = new SoundPlayer(directionSounds[train.Direction]);
                         directionSoundPlayer.Play();
                     }
-                    lastFirstTrain = train; // Mettre à jour le dernier premier train
+                    lastFirstTrain = train; // Mettre à jour le "dernier" premier train
                 }
             }
             else
@@ -269,7 +268,7 @@ namespace ProjetDeTest
 
             if (trains[0] != train) // Réinitialiser si ce n'est plus le premier train
             {
-                soundPlayed = false; // Assurez-vous que cette variable est utilisée uniquement pour le son "à l'approche"
+                soundPlayed = false; // Variable utilisée uniquement pour le son "à l'approche"
             }
         }
 
@@ -279,7 +278,7 @@ namespace ProjetDeTest
             Train newTrain = new Train
             {
                 Name = GenerateRandomTrainName(),
-                Direction = GetRandomDirection(), // Utilisez la nouvelle méthode pour obtenir une direction aléatoire
+                Direction = GetRandomDirection(), // Utilisation dela  méthode pour obtenir une direction aléatoire
                 Time = trains.Max(t => t.Time) + random.Next(1, 31),
                 Comment = String.Empty
             };
@@ -287,7 +286,6 @@ namespace ProjetDeTest
         }
 
 
-        // Make sure to create a class that represents your Train
         private class Train
         {
             public string Name { get; set; }
