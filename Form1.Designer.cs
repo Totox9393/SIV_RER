@@ -35,19 +35,19 @@
             this.lblDirectionLigne = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.lblInfoDestination1 = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+            this.lblDestination1 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.lblTrainNameDestination1 = new System.Windows.Forms.Label();
-            this.lblDestination1 = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.lblTimeDestination1 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.lblInfoVoyageur = new System.Windows.Forms.Label();
+            this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.panel6 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.lblInfoVoyageur = new System.Windows.Forms.Label();
-            this.lblInfoDestination1 = new System.Windows.Forms.Label();
-            this.lblTimeDestination1 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
             this.lblInfoDestination2 = new System.Windows.Forms.Label();
             this.panel10 = new System.Windows.Forms.Panel();
@@ -91,9 +91,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel9.SuspendLayout();
-            this.panel8.SuspendLayout();
-            this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.panel8.SuspendLayout();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel7.SuspendLayout();
@@ -141,9 +141,10 @@
             this.lblDirectionLigne.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDirectionLigne.Location = new System.Drawing.Point(147, 7);
             this.lblDirectionLigne.Name = "lblDirectionLigne";
-            this.lblDirectionLigne.Size = new System.Drawing.Size(340, 60);
+            this.lblDirectionLigne.Size = new System.Drawing.Size(501, 60);
             this.lblDirectionLigne.TabIndex = 0;
-            this.lblDirectionLigne.Text = "Robinson ● Antony ● Saint-Denis\r\nLes Baconnets ● Massy-Palaiseau";
+            this.lblDirectionLigne.Text = "Robinson ● Antony ● Saint-Denis\r\nLes Baconnets ● Massy-Palaiseau ● Chilly-Mazarin" +
+    "";
             // 
             // panel2
             // 
@@ -163,6 +164,15 @@
             this.panel3.Size = new System.Drawing.Size(696, 80);
             this.panel3.TabIndex = 2;
             // 
+            // lblInfoDestination1
+            // 
+            this.lblInfoDestination1.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInfoDestination1.Location = new System.Drawing.Point(472, 1);
+            this.lblInfoDestination1.Name = "lblInfoDestination1";
+            this.lblInfoDestination1.Size = new System.Drawing.Size(224, 77);
+            this.lblInfoDestination1.TabIndex = 4;
+            this.lblInfoDestination1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // panel9
             // 
             this.panel9.BackColor = System.Drawing.Color.White;
@@ -174,31 +184,16 @@
             this.panel9.Size = new System.Drawing.Size(469, 80);
             this.panel9.TabIndex = 3;
             // 
-            // panel8
+            // lblDestination1
             // 
-            this.panel8.BackColor = System.Drawing.SystemColors.Window;
-            this.panel8.Controls.Add(this.lblInfoVoyageur);
-            this.panel8.Location = new System.Drawing.Point(35, 526);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(667, 93);
-            this.panel8.TabIndex = 5;
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.panel4.Controls.Add(this.lblTimeDestination1);
-            this.panel4.Controls.Add(this.label5);
-            this.panel4.Location = new System.Drawing.Point(386, 0);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(83, 80);
-            this.panel4.TabIndex = 0;
-            // 
-            // bunifuDragControl1
-            // 
-            this.bunifuDragControl1.Fixed = true;
-            this.bunifuDragControl1.Horizontal = true;
-            this.bunifuDragControl1.TargetControl = this.panel1;
-            this.bunifuDragControl1.Vertical = true;
+            this.lblDestination1.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDestination1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(1)))), ((int)(((byte)(86)))));
+            this.lblDestination1.Location = new System.Drawing.Point(93, 15);
+            this.lblDestination1.Name = "lblDestination1";
+            this.lblDestination1.Size = new System.Drawing.Size(287, 47);
+            this.lblDestination1.TabIndex = 6;
+            this.lblDestination1.Text = "Destination - 1";
+            this.lblDestination1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // panel5
             // 
@@ -220,16 +215,26 @@
             this.lblTrainNameDestination1.Text = "IDOR53";
             this.lblTrainNameDestination1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // lblDestination1
+            // panel4
             // 
-            this.lblDestination1.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDestination1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(1)))), ((int)(((byte)(86)))));
-            this.lblDestination1.Location = new System.Drawing.Point(93, 15);
-            this.lblDestination1.Name = "lblDestination1";
-            this.lblDestination1.Size = new System.Drawing.Size(287, 47);
-            this.lblDestination1.TabIndex = 6;
-            this.lblDestination1.Text = "Destination - 1";
-            this.lblDestination1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.panel4.Controls.Add(this.lblTimeDestination1);
+            this.panel4.Controls.Add(this.label5);
+            this.panel4.Location = new System.Drawing.Point(386, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(83, 80);
+            this.panel4.TabIndex = 0;
+            // 
+            // lblTimeDestination1
+            // 
+            this.lblTimeDestination1.Font = new System.Drawing.Font("Segoe UI", 30F, System.Drawing.FontStyle.Bold);
+            this.lblTimeDestination1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(168)))), ((int)(((byte)(1)))));
+            this.lblTimeDestination1.Location = new System.Drawing.Point(1, 1);
+            this.lblTimeDestination1.Name = "lblTimeDestination1";
+            this.lblTimeDestination1.Size = new System.Drawing.Size(83, 51);
+            this.lblTimeDestination1.TabIndex = 9;
+            this.lblTimeDestination1.Text = "5";
+            this.lblTimeDestination1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // label5
             // 
@@ -241,6 +246,33 @@
             this.label5.Size = new System.Drawing.Size(51, 30);
             this.label5.TabIndex = 8;
             this.label5.Text = "min";
+            // 
+            // panel8
+            // 
+            this.panel8.BackColor = System.Drawing.SystemColors.Window;
+            this.panel8.Controls.Add(this.lblInfoVoyageur);
+            this.panel8.Location = new System.Drawing.Point(35, 526);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(667, 93);
+            this.panel8.TabIndex = 5;
+            // 
+            // lblInfoVoyageur
+            // 
+            this.lblInfoVoyageur.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInfoVoyageur.Location = new System.Drawing.Point(31, 10);
+            this.lblInfoVoyageur.Name = "lblInfoVoyageur";
+            this.lblInfoVoyageur.Size = new System.Drawing.Size(631, 80);
+            this.lblInfoVoyageur.TabIndex = 1;
+            this.lblInfoVoyageur.Text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor in" +
+    "cididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam tommy toto ed" +
+    "strbzand gfijgdkooufsd disufs ";
+            // 
+            // bunifuDragControl1
+            // 
+            this.bunifuDragControl1.Fixed = true;
+            this.bunifuDragControl1.Horizontal = true;
+            this.bunifuDragControl1.TargetControl = this.panel1;
+            this.bunifuDragControl1.Vertical = true;
             // 
             // panel6
             // 
@@ -263,37 +295,6 @@
             this.pictureBox2.TabIndex = 7;
             this.pictureBox2.TabStop = false;
             this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
-            // 
-            // lblInfoVoyageur
-            // 
-            this.lblInfoVoyageur.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInfoVoyageur.Location = new System.Drawing.Point(31, 10);
-            this.lblInfoVoyageur.Name = "lblInfoVoyageur";
-            this.lblInfoVoyageur.Size = new System.Drawing.Size(631, 80);
-            this.lblInfoVoyageur.TabIndex = 1;
-            this.lblInfoVoyageur.Text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor in" +
-    "cididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam tommy toto ed" +
-    "strbzand gfijgdkooufsd disufs ";
-            // 
-            // lblInfoDestination1
-            // 
-            this.lblInfoDestination1.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInfoDestination1.Location = new System.Drawing.Point(472, 1);
-            this.lblInfoDestination1.Name = "lblInfoDestination1";
-            this.lblInfoDestination1.Size = new System.Drawing.Size(224, 77);
-            this.lblInfoDestination1.TabIndex = 4;
-            this.lblInfoDestination1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lblTimeDestination1
-            // 
-            this.lblTimeDestination1.Font = new System.Drawing.Font("Segoe UI", 30F, System.Drawing.FontStyle.Bold);
-            this.lblTimeDestination1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(168)))), ((int)(((byte)(1)))));
-            this.lblTimeDestination1.Location = new System.Drawing.Point(1, 1);
-            this.lblTimeDestination1.Name = "lblTimeDestination1";
-            this.lblTimeDestination1.Size = new System.Drawing.Size(83, 51);
-            this.lblTimeDestination1.TabIndex = 9;
-            this.lblTimeDestination1.Text = "5";
-            this.lblTimeDestination1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // panel7
             // 
@@ -717,10 +718,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel9.ResumeLayout(false);
-            this.panel8.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            this.panel5.ResumeLayout(false);
+            this.panel8.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel7.ResumeLayout(false);

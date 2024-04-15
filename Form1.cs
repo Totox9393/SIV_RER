@@ -51,7 +51,7 @@ namespace ProjetDeTest
 
         private string GetRandomDirection()
         {
-            string[] possibleDirections = { "Massy-Palaiseau", "Robinson", "Saint-Denis", "Les Baconnets", "Antony" };
+            string[] possibleDirections = { "Massy-Palaiseau", "Robinson", "Saint-Denis", "Les Baconnets", "Antony", "Chilly-Mazarin" };
             string lastDirection = trains.LastOrDefault()?.Direction;
             string secondLastDirection = trains.Count > 1 ? trains[trains.Count - 2].Direction : "";
 
@@ -69,6 +69,7 @@ namespace ProjetDeTest
                 { "Robinson", @"C:\Users\Totox\OneDrive\Documents\Visual Studio 2022\Projets\ProjetDeTest\Robinson.wav" },
                 { "Saint-Denis", @"C:\Users\Totox\OneDrive\Documents\Visual Studio 2022\Projets\ProjetDeTest\Saint-Denis.wav" },
                 { "Les Baconnets", @"C:\Users\Totox\OneDrive\Documents\Visual Studio 2022\Projets\ProjetDeTest\Baconnets.wav" },
+                { "Chilly-Mazarin", @"C:\Users\Totox\OneDrive\Documents\Visual Studio 2022\Projets\ProjetDeTest\Chilly-Mazarin.wav" },
                 { "Antony", @"C:\Users\Totox\OneDrive\Documents\Visual Studio 2022\Projets\ProjetDeTest\Antony.wav" }
             };
         }
