@@ -8,6 +8,14 @@ using Microsoft.VisualBasic.Devices;
 
 namespace ProjetDeTest
 {
+
+ /*
+ * 
+ * Projet SIV Fictif RER RATP 
+ * Par Totox 2024 !
+ * 
+ */
+
     public partial class Form1 : Form
     {
         private List<Train> trains = new List<Train>();
