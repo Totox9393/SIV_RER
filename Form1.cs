@@ -117,7 +117,7 @@ namespace ProjetDeTest
                 int nextTime = lastTime + random.Next(5, 16); // Les trains suivants sont espacés de 5 à 15 minutes
                 if (nextTime > 60)
                 {
-                    nextTime = 60; // Limite le temps à 60 minutes
+                    nextTime = 60; // Limite le temps à 60 minutes !!!!!
                 }
                 trains.Add(new Train
                 {
