@@ -5,16 +5,17 @@ using System.Timers;
 using System.Linq;
 using System.Media;
 using Microsoft.VisualBasic.Devices;
+using System.IO;
 
 namespace ProjetDeTest
 {
 
- /*
- * 
- * Projet SIV Fictif RER RATP 
- * Par Totox 2024 !
- * 
- */
+    /*
+    * 
+    * Projet SIV Fictif RER RATP 
+    * Par Totox 2024 !
+    * 
+    */
 
     public partial class Form1 : Form
     {
@@ -27,14 +28,17 @@ namespace ProjetDeTest
         private System.Timers.Timer secondTimer; // Timer pour les secondes
         private bool soundPlayed = false; // Bool pour suivre si le son a été joué ou non
         private Dictionary<string, string> directionSounds;
-       // private bool isFirstTrainSoundPlayed = false;
         private Train lastFirstTrain = null; // Trace du dernier train qui était en première position
 
-
+        private string basePath;
 
         public Form1()
         {
             InitializeComponent();
+
+            // Initialiser basePath dans le constructeur
+            basePath = AppDomain.CurrentDomain.BaseDirectory;
+
             InitializeDirectionSounds();
             InitializeTrains();
             timerHour.Interval = 1000; // 1000 ms = 1 seconde
@@ -46,12 +50,12 @@ namespace ProjetDeTest
             StartInfoTimer();
 
             currentInfoIndex = 0;
-
         }
 
         private string GetRandomDirection()
         {
-            string[] possibleDirections = { "Massy-Palaiseau", "Robinson", "Saint-Denis", "Les Baconnets", "Antony", "Chilly-Mazarin" };
+            string[] possibleDirections = { "Massy-Palaiseau", "Robinson", "Saint-Denis", "Les Baconnets", "Antony" };
+
             string lastDirection = trains.LastOrDefault()?.Direction;
             string secondLastDirection = trains.Count > 1 ? trains[trains.Count - 2].Direction : "";
 
@@ -65,15 +69,24 @@ namespace ProjetDeTest
         {
             directionSounds = new Dictionary<string, string>
             {
-                { "Massy-Palaiseau", @"C:\Users\Totox\OneDrive\Documents\Visual Studio 2022\Projets\ProjetDeTest\MassyPalaiseau.wav" },
-                { "Robinson", @"C:\Users\Totox\OneDrive\Documents\Visual Studio 2022\Projets\ProjetDeTest\Robinson.wav" },
-                { "Saint-Denis", @"C:\Users\Totox\OneDrive\Documents\Visual Studio 2022\Projets\ProjetDeTest\Saint-Denis.wav" },
-                { "Les Baconnets", @"C:\Users\Totox\OneDrive\Documents\Visual Studio 2022\Projets\ProjetDeTest\Baconnets.wav" },
-                { "Chilly-Mazarin", @"C:\Users\Totox\OneDrive\Documents\Visual Studio 2022\Projets\ProjetDeTest\Chilly-Mazarin.wav" },
-                { "Antony", @"C:\Users\Totox\OneDrive\Documents\Visual Studio 2022\Projets\ProjetDeTest\Antony.wav" }
+                { "Massy-Palaiseau", Path.Combine(basePath, "MassyPalaiseau.wav") },
+                { "Robinson", Path.Combine(basePath, "Robinson.wav") },
+                { "Saint-Denis", Path.Combine(basePath, "Saint-Denis.wav") },
+                { "Les Baconnets", Path.Combine(basePath, "Baconnets.wav") },
+                { "Antony", Path.Combine(basePath, "Antony.wav") }
             };
+
+            // Vérifier si tous les fichiers existent
+            foreach (var sound in directionSounds)
+            {
+                if (!File.Exists(sound.Value))
+                {
+                    MessageBox.Show($"Fichier audio manquant : {sound.Value}", "Erreur de fichier", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
-        
+
+
         private void InitializeInfoMessages()
         {
             infoMessages.Add("Travaux à Gare du Nord: accès restreint au Quai 3 en dir. de Mitry - Claye jusqu'au 15 avril.");
@@ -122,7 +135,6 @@ namespace ProjetDeTest
             int lastTime = firstTrainTime;
             for (int i = 1; i < 5; i++)
             {
-            // TODO: Gérer l'affluence du trafic en modifiant les espacements des horaires de passages
                 int nextTime = lastTime + random.Next(5, 16); // Les trains suivants sont espacés de 5 à 15 minutes
                 if (nextTime > 60)
                 {
@@ -141,7 +153,6 @@ namespace ProjetDeTest
             trains = trains.OrderBy(t => t.Time).ToList(); // Triage des trains en fonction de leurs temps
             UpdateAllTrainDisplays();
         }
-
 
         private void UpdateAllTrainDisplays()
         {
@@ -188,8 +199,6 @@ namespace ProjetDeTest
             }));
         }
 
-
-
         private void OnSecondTimedEvent(Object source, ElapsedEventArgs e)
         {
             Invoke(new Action(() =>
@@ -223,7 +232,6 @@ namespace ProjetDeTest
             }));
         }
 
-
         private void UpdateTrainDisplay(int index)
         {
             if (index >= trains.Count)
@@ -249,8 +257,7 @@ namespace ProjetDeTest
                     if (lblInfo != null && train.Seconds > 3) lblInfo.Text = "À l'approche";
                     if (!soundPlayed)
                     {
-                        SoundPlayer soundPlayer = new SoundPlayer(@"C:\Users\Totox\OneDrive\Documents\Visual Studio 2022\Projets\ProjetDeTest\annonce_protrain1_v2.wav");
-                        soundPlayer.Play();
+                        PlayAnnouncementSound();
                         soundPlayed = true; // Marquer le son comme joué
                     }
                 }
@@ -267,7 +274,7 @@ namespace ProjetDeTest
                         SoundPlayer directionSoundPlayer = new SoundPlayer(directionSounds[train.Direction]);
                         directionSoundPlayer.Play();
                     }
-                    lastFirstTrain = train; // Mettre à jour le "dernier" premier train
+                    lastFirstTrain = train; // Mettre à jour le "dernier" premier train.
                 }
             }
             else
@@ -281,19 +288,32 @@ namespace ProjetDeTest
             }
         }
 
+        private void PlayAnnouncementSound()
+        {
+            string announcementPath = Path.Combine(basePath, "annonce_protrain1_v2.wav");
+            if (!File.Exists(announcementPath))
+            {
+                MessageBox.Show($"Fichier audio manquant : {announcementPath}", "Erreur de fichier", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                SoundPlayer soundPlayer = new SoundPlayer(announcementPath);
+                soundPlayer.Play();
+            }
+        }
+
 
         private void AddNewTrain()
         {
             Train newTrain = new Train
             {
                 Name = GenerateRandomTrainName(),
-                Direction = GetRandomDirection(), // Utilisation dela  méthode pour obtenir une direction aléatoire
+                Direction = GetRandomDirection(), // Utilisation dela méthode pour obtenir une direction aléatoire
                 Time = trains.Max(t => t.Time) + random.Next(1, 31),
                 Comment = String.Empty
             };
             trains.Add(newTrain);
         }
-
 
         private class Train
         {

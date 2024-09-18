@@ -141,10 +141,9 @@
             this.lblDirectionLigne.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDirectionLigne.Location = new System.Drawing.Point(147, 7);
             this.lblDirectionLigne.Name = "lblDirectionLigne";
-            this.lblDirectionLigne.Size = new System.Drawing.Size(501, 60);
+            this.lblDirectionLigne.Size = new System.Drawing.Size(340, 60);
             this.lblDirectionLigne.TabIndex = 0;
-            this.lblDirectionLigne.Text = "Robinson ● Antony ● Saint-Denis\r\nLes Baconnets ● Massy-Palaiseau ● Chilly-Mazarin" +
-    "";
+            this.lblDirectionLigne.Text = "Robinson ● Antony ● Saint-Denis\r\nLes Baconnets ● Massy-Palaiseau";
             // 
             // panel2
             // 
@@ -159,9 +158,9 @@
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(221)))), ((int)(((byte)(237)))));
             this.panel3.Controls.Add(this.lblInfoDestination1);
             this.panel3.Controls.Add(this.panel9);
-            this.panel3.Location = new System.Drawing.Point(2, 91);
+            this.panel3.Location = new System.Drawing.Point(0, 91);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(696, 80);
+            this.panel3.Size = new System.Drawing.Size(702, 80);
             this.panel3.TabIndex = 2;
             // 
             // lblInfoDestination1
@@ -264,8 +263,8 @@
             this.lblInfoVoyageur.Size = new System.Drawing.Size(631, 80);
             this.lblInfoVoyageur.TabIndex = 1;
             this.lblInfoVoyageur.Text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor in" +
-    "cididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam tommy toto ed" +
-    "strbzand gfijgdkooufsd disufs ";
+    "cididunt ut labore et dolore magna aliqua. Ut enim ad minim adipiscing elit, sed" +
+    " do eiusmod tempor ";
             // 
             // bunifuDragControl1
             // 
@@ -301,9 +300,9 @@
             this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(221)))), ((int)(((byte)(237)))));
             this.panel7.Controls.Add(this.lblInfoDestination2);
             this.panel7.Controls.Add(this.panel10);
-            this.panel7.Location = new System.Drawing.Point(2, 175);
+            this.panel7.Location = new System.Drawing.Point(0, 175);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(696, 80);
+            this.panel7.Size = new System.Drawing.Size(702, 80);
             this.panel7.TabIndex = 7;
             // 
             // lblInfoDestination2
@@ -394,9 +393,9 @@
             this.panel13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(221)))), ((int)(((byte)(237)))));
             this.panel13.Controls.Add(this.lblInfoDestination3);
             this.panel13.Controls.Add(this.panel14);
-            this.panel13.Location = new System.Drawing.Point(2, 259);
+            this.panel13.Location = new System.Drawing.Point(0, 259);
             this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(696, 80);
+            this.panel13.Size = new System.Drawing.Size(702, 80);
             this.panel13.TabIndex = 8;
             // 
             // lblInfoDestination3
@@ -487,9 +486,9 @@
             this.panel17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(221)))), ((int)(((byte)(237)))));
             this.panel17.Controls.Add(this.lblInfoDestination4);
             this.panel17.Controls.Add(this.panel18);
-            this.panel17.Location = new System.Drawing.Point(2, 343);
+            this.panel17.Location = new System.Drawing.Point(0, 343);
             this.panel17.Name = "panel17";
-            this.panel17.Size = new System.Drawing.Size(696, 80);
+            this.panel17.Size = new System.Drawing.Size(702, 80);
             this.panel17.TabIndex = 9;
             // 
             // lblInfoDestination4
@@ -580,9 +579,9 @@
             this.panel21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(221)))), ((int)(((byte)(237)))));
             this.panel21.Controls.Add(this.lblInfoDestination5);
             this.panel21.Controls.Add(this.panel22);
-            this.panel21.Location = new System.Drawing.Point(2, 427);
+            this.panel21.Location = new System.Drawing.Point(0, 427);
             this.panel21.Name = "panel21";
-            this.panel21.Size = new System.Drawing.Size(696, 80);
+            this.panel21.Size = new System.Drawing.Size(702, 80);
             this.panel21.TabIndex = 10;
             // 
             // lblInfoDestination5
@@ -712,7 +711,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "RER B - Robinson Orsay";
+            this.Text = "SITRA RER B - SIV ";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
